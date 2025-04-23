@@ -29,6 +29,9 @@ body {
   color: var(--text-color);
   background-color: var(--white-color);
   overflow-x: hidden; /* Prevent horizontal scroll */
+  padding-top: var(--navbar-height); /* Add padding for fixed navbar */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -294,6 +297,8 @@ section {
     overflow: hidden; /* Prevent AOS overflow issues */
     position: relative;
     z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 section:nth-of-type(odd):not(.hero-section) {
      background-color: var(--light-gray); /* Alternate section backgrounds */
@@ -534,6 +539,7 @@ footer h5 {
     position: relative;
     margin-bottom: 50px;
     padding-left: 40px;
+    width: 100%;
 }
 
 .timeline-item::before {
@@ -552,6 +558,8 @@ footer h5 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    overflow: hidden; /* Prevent content overflow */
+    word-wrap: break-word; /* Ensure long words don't overflow */
 }
 
 .timeline-content h4 {
@@ -566,10 +574,15 @@ footer h5 {
 
     .timeline-item {
         padding-left: 60px;
+        margin-bottom: 30px; /* Reduce spacing on mobile */
     }
 
     .timeline-item::before {
         left: 12px;
+    }
+
+    .timeline-content {
+        padding: 15px; /* Smaller padding on mobile */
     }
 }
 
@@ -579,15 +592,31 @@ footer h5 {
 @media (max-width: 991.98px) {
     h1 { font-size: 2.4rem; }
     h2 { font-size: 2rem; }
+    h3 { font-size: 1.6rem; }
+    h4 { font-size: 1.3rem; }
     .hero-content h1 { font-size: 2.8rem; }
     section { padding: 4rem 0; }
     .navbar { height: auto; } /* Allow navbar to expand height */
-     .navbar.navbar-scrolled { height: auto; }
+    .navbar.navbar-scrolled { height: auto; }
+
+    /* Adjust main content padding to account for fixed navbar */
+    main {
+        padding-top: 65px;
+    }
+
+    /* Adjust card spacing */
+    .card {
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 767.98px) {
     h1 { font-size: 2rem; }
     h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.2rem; }
+    p { font-size: 0.95rem; }
+    .lead { font-size: 1.1rem !important; }
     .hero-content h1 { font-size: 2.2rem; }
     .hero-content p.lead { font-size: 1rem; }
     .btn { padding: 0.6rem 1.2rem; font-size: 0.9rem;}
@@ -595,4 +624,56 @@ footer h5 {
     footer { text-align: center; }
     footer .col-md-2, footer .col-md-3 { margin-bottom: 2rem; }
     .social-icons { justify-content: center; }
+
+    /* Adjust section padding */
+    section {
+        padding: 3rem 0;
+    }
+
+    /* Ensure proper spacing for mission statement page */
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Adjust card padding */
+    .card-body {
+        padding: 1.25rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 575.98px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.4rem; }
+    .display-5 { font-size: 1.8rem; }
+    .display-4 { font-size: 2rem; }
+    .hero-content h1 { font-size: 1.8rem; }
+
+    /* Adjust section padding further */
+    section {
+        padding: 2.5rem 0;
+    }
+
+    /* Ensure cards don't overflow on small screens */
+    .card {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Adjust timeline for very small screens */
+    .timeline-item {
+        padding-left: 50px;
+    }
+
+    .timeline-item::before {
+        left: 10px;
+    }
+
+    /* Ensure proper spacing between elements */
+    .mb-5 {
+        margin-bottom: 2rem !important;
+    }
 }

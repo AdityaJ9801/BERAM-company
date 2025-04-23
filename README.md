@@ -4,12 +4,13 @@ Official website for BeRAM - Bhandarkar Excellences of Research and Management.
 
 ## Features
 
-- Responsive design for all devices
-- Project showcase
-- Solutions overview
-- News and updates
+- Fully responsive design for all devices (mobile, tablet, desktop)
+- Project showcase with detailed information
+- Solutions overview with interactive elements
+- News and updates section
 - Contact form with email integration
-- Mission statement page
+- Mission statement page with timeline visualization
+- Static site generation for easy deployment and sharing
 
 ## Technology Stack
 
@@ -63,6 +64,28 @@ For coverage report:
 ```bash
 pytest --cov=beram
 ```
+
+## Static Site Generation
+
+You can generate a static version of the website that can be hosted anywhere or shared directly:
+
+1. Make sure the Flask development server is running:
+   ```bash
+   python run.py
+   ```
+
+2. Run the static site generator:
+   ```bash
+   python static_site_generator.py
+   ```
+
+3. The static site will be created in the `beram_static_site` directory.
+
+4. To view the static site on any device on your network:
+   ```bash
+   python run_static_site.py  # On Windows: run_static_site.bat
+   ```
+   This will start a local server that can be accessed from any device on your network.
 
 ## Production Deployment
 
