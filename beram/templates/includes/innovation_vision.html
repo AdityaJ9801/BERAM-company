@@ -1,0 +1,17 @@
+ <section id="innovation-vision" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Vision: Bharat the Land of Innovation</h2>
+        <p class="lead text-center mb-5">Inspired by the pioneers who shaped India's scientific legacy, we strive to build the future.</p>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center">
+            {% for scientist in scientists %}
+            <div class="col text-center">
+                <div class="scientist-card">
+                    <img src="{{ url_for('static', filename=scientist.img) }}" alt="{{ scientist.name }}" class="img-fluid rounded-circle mb-2">
+                    <h6>{{ scientist.name }}</h6>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- Add CSS for .scientist-card if needed -->

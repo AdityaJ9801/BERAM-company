@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="display-5 text-center mb-5">{{ title }}</h1>
+
+        <div class="row mb-5 align-items-center">
+            <div class="col-md-6">
+                <h2>Our Story</h2>
+                <p class="lead">BeRAM was founded with a vision to harness the power of autonomous systems and AI to solve real-world problems and drive progress.</p>
+                <p>Inspired by India's rich history of innovation, we are committed to developing cutting-edge drone technology that pushes boundaries and creates tangible impact across industries. We believe in building solutions that are not only technologically advanced but also reliable, scalable, and accessible.</p>
+            </div>
+            <div class="col-md-6">
+                {# Add a relevant image about the company or team #}
+                <img src="{{ url_for('static', filename='img/about_team_placeholder.jpg') }}" class="img-fluid rounded" alt="BeRAM Team">
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+         <div class="row mb-5">
+            <div class="col-12 text-center">
+                 <h2>Mission & Vision</h2>
+                 <p class="lead"><strong>Vision:</strong> "Bharat the Land of Innovation"</p>
+                 <p><strong>Mission:</strong> To design, develop, and deploy intelligent aerial solutions that enhance efficiency, safety, and productivity for our clients worldwide, while fostering a culture of continuous learning and ethical innovation.</p>
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        {# You can reuse the innovation vision section if desired #}
+        {% include 'includes/innovation_vision.html' %}
+
+
+        <hr class="my-5">
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Join Our Journey</h2>
+                <p class="lead">Join Our Journey: We are always looking for passionate individuals and partners to collaborate with.</p>
+                <a href="#" class="btn btn-primary me-2">View Careers</a> {# Link to a future careers page #}
+                <a href="{{ url_for('main.contact') }}" class="btn btn-outline-primary">Contact Us</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
